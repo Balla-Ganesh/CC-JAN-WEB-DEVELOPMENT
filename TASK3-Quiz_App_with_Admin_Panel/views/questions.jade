@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+    h2=title 
+    form(action="/questions" method="POST")
+        .questions_form
+            label(for="question") Question: 
+            textarea(type="text" name="question", cols="30", rows="2" id="tex")
+            br  
+            label(for="option1") Option 1:
+            input(type="text" name="option1" id="name")
+            br
+            label(for="option2") Option 2:
+            input(type="text" name="option2" id="name")
+            br
+            label(for="option3") Option 3:
+            input(type="text" name="option3" id="name")
+            br
+            label(for="option4") Option 4:
+            input(type="text" name="option4" id="name")
+            br
+            label(for="correct") Correct answer:  
+            input(type="text" name="correct" id="name")
+            br
+            //- .submit_ans
+            a(href="/submit")   
+                button(type="submit" class="button-small") Confirm   
+            br

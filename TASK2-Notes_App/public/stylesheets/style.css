@@ -1,0 +1,97 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(11, 11, 11);
+}
+
+a {
+  color: #00B7FF;
+}
+
+.layout_h3{
+  text-align: center;
+}
+
+.outer{
+  display: flex;
+  margin: 3%;
+  background-color: rgba(47, 130, 247, 0.573);
+}
+
+.outer p{
+  font-size: 20px;
+  margin: 5%;
+}
+
+.outer img{
+  width: 20%;
+  margin: 2%;
+  margin-right: 5%;
+}
+
+.bar{
+  display: flex;
+  margin: 1%;
+}
+
+.n_name , .n_edit , .n_delete {
+  display: flex;
+
+}
+
+.btn-secondary{
+  background-color: black;
+  width: 100%;
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  border-radius:10px;
+}
+
+.button-small{
+  background-color: black;
+  width: 100%;
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  border-radius:10px;
+}
+
+button a{
+  text-decoration: none;
+}
+
+button a:hover{
+  color: black;
+}
+
+button:hover{
+  background-color: red;
+}
+
+.btn:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
+
+.n_name{
+  flex-grow: 6;
+}
+
+.n_edit{
+  flex-grow: 2;
+}
+
+.n_delete{
+  flex-grow: 2;
+}
+
+.col-form-label{
+  color: rgb(255, 4, 0);
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: larger;
+}
+
+.form-control{
+  color: blue;
+  background-color: #ffff;
+}

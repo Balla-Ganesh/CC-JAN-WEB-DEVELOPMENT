@@ -1,0 +1,19 @@
+extends layout
+include mixins/notes 
+
+block content
+    p Welcome to #{title}
+    button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModal') Open Your Notes
+    #exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
+        .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+            .modal-content
+                .modal-body
+                    form(action="") 
+                    .mb-3 
+                        label(for="name" class="col-form-label") Name: 
+                        input(type="text" class="form-control" value=`${name}` id="name" name="name")
+                    .mb-3 
+                        label(for="description" class="col-form-label") Description: 
+                        textarea(class="form-control" id="description" rows="15" name="description")= `${description}`
+                    .modal-footer
+                        button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close 

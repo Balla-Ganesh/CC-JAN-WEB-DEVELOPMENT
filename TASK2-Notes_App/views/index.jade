@@ -1,0 +1,42 @@
+extends layout
+include mixins/notes 
+
+block content
+  .outer 
+    p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia beatae libero, asperiores fuga ut quisquam possimus? Voluptates commodi perferendis minima doloribus repudiandae. Delectus nobis debitis, rem ut perspiciatis accusamus ex ratione error dignissimos, quisquam ipsum laudantium quia, reprehenderit quam optio odit illo doloribus modi totam blanditiis officia reiciendis recusandae. Harum laborum aspernatur itaque dolor velit, ipsum odio. Necessitatibus vel minus tempore ducimus ratione fugit sit dolorem velit voluptatibus dolores, neque eius eaque veritatis officia sunt dignissimos voluptas iusto cum similique sequi nemo provident nostrum enim! Impedit laudantium sunt, voluptatum numquam, iure odit reiciendis praesentium eveniet repellat unde sint! Ut, reiciendis!
+    img(src="images/notes.png", alt="sorry image cannot be loaded")
+  br
+  if req.url.startsWith('/edit/') || req.url === '/edit'
+    button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModal') Open Your Notes
+    #exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
+        .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+            .modal-content
+                .modal-body
+                    form(action="/index" method="POST") 
+                        .mb-3 
+                            label(for="name" class="col-form-label") Name: 
+                            input(type="text" class="form-control" value=`${name}` id="name" name="name")
+                        .mb-3 
+                            label(for="description" class="col-form-label") Description: 
+                            textarea(class="form-control" id="description" rows="15" name="description")= `${description}`
+                        .modal-footer
+                            button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close 
+  else 
+    button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModal') Add New Notes
+    #exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
+      .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+        .modal-content
+          .modal-body
+            form(action="/index" method="POST") 
+              .mb-3 
+                label(for="name" class="col-form-label") Name: 
+                input(type="text" class="form-control" id="name" name="name")
+              .mb-3 
+                label(for="description" class="col-form-label") Description: 
+                textarea(class="form-control" id="description" rows="15" name="description")
+              .modal-footer
+                button.btn.btn-primary.button-small(type='submit') Save changes
+                button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close 
+    for note in allNotes
+      .notes_wrapper
+        +notes(note)

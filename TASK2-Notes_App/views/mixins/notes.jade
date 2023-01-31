@@ -1,0 +1,11 @@
+mixin notes(note)
+    .bar
+        .n_name
+            button.btn.btn-secondary 
+                a(href=`/details/${note.name}`)= `${note.name}` 
+        .n_edit 
+            button.btn.btn-secondary 
+                a(href=`/edit/${note.name}`) Edit
+        .n_delete 
+            button.btn.btn-secondary 
+                a(href=`/deletes/${note.name}`) Delete 

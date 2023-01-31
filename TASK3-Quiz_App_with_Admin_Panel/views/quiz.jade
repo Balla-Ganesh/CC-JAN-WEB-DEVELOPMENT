@@ -1,0 +1,11 @@
+extends layout 
+include mixins/ques_form 
+
+block content 
+    h1 Take the Quizz
+    .form_class 
+        for questions in allquestions 
+            +question(questions)
+            br
+            hr 
+        button(type="submit") Submit

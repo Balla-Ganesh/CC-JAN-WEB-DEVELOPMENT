@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+    h2=title 
+    .notes_container     
+        form(action="" method="POST")
+            label(for="name") Notes Name:  
+            input(type="text" name="name" id="name")
+            br
+            label(for="description") Description
+            br
+            textarea(type="text" name="description", cols="30", rows="10" id="description")
+            br  
+            button(type="submit" class="button-small") Confirm   
+            br
+
