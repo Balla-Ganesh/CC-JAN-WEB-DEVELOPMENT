@@ -1,5 +1,5 @@
 # CC-JAN-WEB-DEVELOPMENT
- I have successfully completed 2 projects and 1 golden project allocated to me
+ I have successfully completed 2 projects and 1 golden project(Ongoing) allocated to me
 
 Project 1: JavaScript Quiz Game
 
